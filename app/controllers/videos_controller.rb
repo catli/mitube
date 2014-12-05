@@ -1,9 +1,10 @@
 class VideosController < ApplicationController
-  def index
-  end
+	def index
+		@videos = Video.order('created_at DESC')
+	end
 
 	def new
-  		@video = Video.new
+		@video = Video.new
 	end
 
 	def create
@@ -17,6 +18,7 @@ class VideosController < ApplicationController
 	end
 
 	def show
+		@video = Video.find(params[:id])
 	end
 
 private 
