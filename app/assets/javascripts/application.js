@@ -1,3 +1,5 @@
+
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -53,11 +55,14 @@ $(function() {
 _run = function() {
   $('.preview').first().click();
 };
+
 google.setOnLoadCallback(_run);
 
 //listens for click
-$('.preview').click(function() {
-  return makeVideoPlayer($(this).data('uid'));
+$(document).ready(function () {
+  $('.preview').click(function() {
+    return makeVideoPlayer($(this).data('uid'));
+  });
 });
 
 //listens for change in player window
